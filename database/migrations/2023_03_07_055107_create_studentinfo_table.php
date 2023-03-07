@@ -25,7 +25,7 @@ return new class extends Migration
             $table->smallinteger('year');
             $table->date('birthday', 20);
             $table->string('gender', 6);
-            $table->timestamps();
+            $table->timestamps();s
         });
     }
 
