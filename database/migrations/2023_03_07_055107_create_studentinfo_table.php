@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('studentinfo', function (Blueprint $table) {
            
-            $table->id('sno');
+            $table->id('sNo');
             $table->string('idNo', 8);
             $table->string('firstName', 20);
             $table->string('middleName', 15)->nullable();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('course', 15);
             $table->smallinteger('year');
             $table->date('birthday', 20);
-            $table->string('gender', 6);
+            $table->string('gender', 6); // sir CR sako Sir
             $table->timestamps();
         });
     }
