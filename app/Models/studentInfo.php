@@ -11,7 +11,7 @@ class studentInfo extends Model
 
     protected $table = 'studentinfo';
 
-    protected $fillable = {
+    protected $fillable = [
         'idNo',
         'firstName',
         'middleName',
@@ -19,7 +19,9 @@ class studentInfo extends Model
         'suffix',
         'course',
         'year',
-        'birthday',
+        'birthdayyy',
         'gender',
-    };
+    ];
+
+    
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\studentInfo;
+
 
 class studentInfoController extends Controller
 {
@@ -13,7 +15,43 @@ class studentInfoController extends Controller
      */
     public function index()
     {
-        //
+        // ADDING
+        // echo "TEST";
+        // $studentinfo = new studentinfo();
+
+        // $studentinfo ->idNo = "C19-0210";
+        // $studentinfo ->firstName = "test222";
+        // $studentinfo ->middleName = "test2222";
+        // $studentinfo ->lastName = "test3222";
+        // $studentinfo ->suffix = "Jr.";
+        // $studentinfo ->course = "BSIT";
+        // $studentinfo ->year = "3";
+        // $studentinfo ->birthday = "2000-12-21";
+        // $studentinfo ->gender = "Male";
+
+        // $studentinfo->save();
+
+        // echo "Student Information Successfully saved in the database";
+// --------------------------------------------------------------------------
+        //Delete 
+        // find() -- using the field name 'id' (default)
+        // where() -- using another field name
+        // SELECT * FROM studenInfo WHERER sNO = 2
+        // --------------------------------
+        // $studentinfo = studentinfo::where('sNO', 2);
+        // $studentinfo->delete();
+        // echo "Student Information Successfully delete in the database";
+
+// -----------------------------------------------------------------------
+        // //UPDATE RECORD ON DATABASE
+        // $studentinfo = studentinfo::where('sNo',1)->update(['firstName'=> 'Carms Caps']);
+        // // $studentinfo->save();
+        // echo "Student Information Successfully update in the database";
+
+        //RETRIEVE RECORDS
+        $studentinfo = studentinfo::all();
+        return $studentinfo;
+        
     }
 
     /**
