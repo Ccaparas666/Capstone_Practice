@@ -72,6 +72,23 @@ class studentInfoController extends Controller
      */
     public function store(Request $request)
     {
+        $studentinfo = new studentinfo();
+    
+        $studentinfo->idNo = $request->xidNo;
+        $studentinfo->firstName = $request->xfirstName;
+        $studentinfo->middleName = $request->xmiddleName;
+        $studentinfo->lastName = $request->xlastName;
+        $studentinfo->suffix = $request->xsuffix;
+        $studentinfo->course = $request->xcourse;
+        $studentinfo->year = $request->xyear;
+        $studentinfo->birthday = $request->xbirthday;
+        $studentinfo->gender = $request->xgender;
+
+        $studentinfo->save();
+        return redirect()->route('students');
+
+        // echo "Student Information Successfully saved in the database";
+        
         //
     }
 

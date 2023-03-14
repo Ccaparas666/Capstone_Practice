@@ -19,7 +19,7 @@ class studentInfo extends Model
         'suffix',
         'course',
         'year',
-        'birthdayyy',
+        'birthday',
         'gender',
     ];
 
