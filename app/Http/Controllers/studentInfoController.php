@@ -15,6 +15,9 @@ class studentInfoController extends Controller
      */
     public function index()
     {
+        // echo "TEST";
+        $studentInfo = studentInfo::all();
+        return view('students.index', compact('studentInfo'));
         // ADDING
         // echo "TEST";
         // $studentinfo = new studentinfo();
@@ -49,8 +52,9 @@ class studentInfoController extends Controller
         // echo "Student Information Successfully update in the database";
 
         //RETRIEVE RECORDS
-        $studentinfo = studentinfo::all();
-        return $studentinfo;
+        // $studentinfo = studentinfo::all();
+        // return $studentinfo;
+        
         
     }
 
@@ -72,8 +76,20 @@ class studentInfoController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'xidNo' => ['required', 'max:8'],
+            'xfirstName' => ['required','max:20'],
+            'xmiddleName' => ['max:15'],
+            'xlastName' => ['required','max:15'],
+            'xsuffix' => ['required','max:5'],
+            'xcourse' => ['required','max:8'],
+            'xyear' => ['required','max:8'],
+            'xbirthday' => ['required','max:8'],
+            'xgender' => ['required','max:8'],
+        ]);
+
         $studentinfo = new studentinfo();
-    
+        
         $studentinfo->idNo = $request->xidNo;
         $studentinfo->firstName = $request->xfirstName;
         $studentinfo->middleName = $request->xmiddleName;
@@ -86,7 +102,7 @@ class studentInfoController extends Controller
 
         $studentinfo->save();
         return redirect()->route('students');
-
+        
         // echo "Student Information Successfully saved in the database";
         
         //
@@ -100,7 +116,9 @@ class studentInfoController extends Controller
      */
     public function show($id)
     {
-        //
+    //    echo "test";
+       $studentInfo = StudentInfo::where('sNo',$id)->get();
+       return view('students.show', compact('studentInfo'));
     }
 
     /**

@@ -9,48 +9,56 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                @if($errors)
+                        <h6>Errors Encountered</h6>
+                        <ul>
+                            @foreach($errors->all() as $errors)
+                                <li>{{ $errors }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                     <form method ="POST" action="{{ route ('student-store')}}">
                         @csrf
                         <div class="flex items-center">
                             <label for ="ID Number">ID Number</label>
                             <div>
-                                <input type="text" name="xidNo" value="{{ old('xidNo') }}"/>
+                                <input type="text" class="text-black" name="xidNo" value="{{ old('xidNo') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="firstName">firstName</label>
                             <div>
-                                <input type="text" name="xfirstName" value="{{ old('xfirstName') }}"/>
+                                <input type="text" class="text-black" name="xfirstName" value="{{ old('xfirstName') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="middleName">middleName</label>
                             <div>
-                                <input type="text" name="xmiddleName" value="{{ old('xmiddleName') }}"/>
+                                <input type="text" class="text-black" name="xmiddleName" value="{{ old('xmiddleName') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="lastName">lastName</label>
                             <div>
-                                <input type="text" name="xlastName" value="{{ old('xlastName') }}"/>
+                                <input type="text" class="text-black" name="xlastName" value="{{ old('xlastName') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="suffix">suffix</label>
                             <div>
-                                <input type="text" name="xsuffix" value="{{ old('xsuffix') }}"/>
+                                <input type="text" class="text-black" name="xsuffix" value="{{ old('xsuffix') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="course">course</label>
                             <div>
-                                <input type="text" name="xcourse" value="{{ old('xcourse') }}"/>
+                                <input type="text" class="text-black" name="xcourse" value="{{ old('xcourse') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <label for ="year">year</label>
                             <div>
-                                <input type="number" name="xyear" value="{{ old('xyear') }}"/>
+                                <input type="number" class="text-black" name="xyear" value="{{ old('xyear') }}"/>
                             </div>
                         </div>
                         <div class="flex items-center">
