@@ -40,6 +40,7 @@
                         </tbody>
 
                     </table>
+                    <a href="{{ route('students')}}">back</a>
 
                 </div>
             </div>
